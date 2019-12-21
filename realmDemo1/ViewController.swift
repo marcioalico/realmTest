@@ -11,6 +11,11 @@ import RealmSwift
 
 class ViewController: UIViewController {
 
+    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+    
+    @IBOutlet var nameTxt: UITextField!
+    @IBOutlet var lastNameTxt: UITextField!
+    
     //var realm: Realm!
     
     override func viewDidLoad() {
@@ -21,6 +26,13 @@ class ViewController: UIViewController {
         //realm = try! Realm()
     }
 
+    
+    @IBAction func guardar(){
+        let nameTxt = self.nameTxt.text!
+        let lastNameTxt = self.lastNameTxt.text!
+        
+        addUser(name: nameTxt, lastName: lastNameTxt, userId: "2")
+    }
     
     func addUser(name: String, lastName: String, userId: String){
         //realm = try! Realm()

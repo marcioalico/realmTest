@@ -13,6 +13,7 @@ class User: Object {
     @objc dynamic var name: String?
     @objc dynamic var lastName: String?
     @objc dynamic var userId: String?
+    dynamic var city: City?
       
       
       override static func primaryKey() -> String? {

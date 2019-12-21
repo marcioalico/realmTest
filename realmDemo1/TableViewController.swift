@@ -46,10 +46,19 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(identifier: "nextViewController")
+        
+        let addCityViewController = storyBoard.instantiateViewController(identifier: "addCityViewController")
+        
+        
+        
         var fila = indexPath.row
+        
         switch (fila){
-        case(0): print("celda 0")
-        case(1): print("celda 1")
+        case(0): self.present(nextViewController, animated: true, completion: nil)
+        case(1): self.present(addCityViewController, animated: true, completion: nil)
         default:
             print("default")
         }
@@ -57,13 +66,13 @@ class TableViewController: UITableViewController {
  
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
     /*
     // Override to support editing the table view.

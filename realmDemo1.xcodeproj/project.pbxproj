@@ -11,6 +11,7 @@
 		DC16072F23AABF3F004F82BB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC16072E23AABF3F004F82BB /* Constants.swift */; };
 		DC6C1A8723ABF4EF00F0F717 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6C1A8623ABF4EF00F0F717 /* City.swift */; };
 		DC6C1A8923AC02E600F0F717 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6C1A8823AC02E600F0F717 /* TableViewController.swift */; };
+		DCF0D20923AD82B400314ED4 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF0D20823AD82B400314ED4 /* AddCityViewController.swift */; };
 		DCFF5FA723A95E2B00668D8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFF5FA623A95E2B00668D8B /* AppDelegate.swift */; };
 		DCFF5FA923A95E2B00668D8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFF5FA823A95E2B00668D8B /* SceneDelegate.swift */; };
 		DCFF5FAB23A95E2B00668D8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFF5FAA23A95E2B00668D8B /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		DC16072E23AABF3F004F82BB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DC6C1A8623ABF4EF00F0F717 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		DC6C1A8823AC02E600F0F717 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		DCF0D20823AD82B400314ED4 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		DCFF5FA323A95E2B00668D8B /* realmDemo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = realmDemo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCFF5FA623A95E2B00668D8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCFF5FA823A95E2B00668D8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,14 +93,15 @@
 				DCFF5FA623A95E2B00668D8B /* AppDelegate.swift */,
 				DCFF5FA823A95E2B00668D8B /* SceneDelegate.swift */,
 				DCFF5FAA23A95E2B00668D8B /* ViewController.swift */,
+				DCF0D20823AD82B400314ED4 /* AddCityViewController.swift */,
 				DC6C1A8823AC02E600F0F717 /* TableViewController.swift */,
 				DCFF5FAC23A95E2B00668D8B /* Main.storyboard */,
 				DCFF5FAF23A95E3100668D8B /* Assets.xcassets */,
 				DCFF5FB123A95E3100668D8B /* LaunchScreen.storyboard */,
 				DCFF5FB423A95E3100668D8B /* Info.plist */,
 				DCFF5FBA23A9612F00668D8B /* User.swift */,
-				DC16072E23AABF3F004F82BB /* Constants.swift */,
 				DC6C1A8623ABF4EF00F0F717 /* City.swift */,
+				DC16072E23AABF3F004F82BB /* Constants.swift */,
 			);
 			path = realmDemo1;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				DCFF5FAB23A95E2B00668D8B /* ViewController.swift in Sources */,
 				DCFF5FA723A95E2B00668D8B /* AppDelegate.swift in Sources */,
 				DCFF5FA923A95E2B00668D8B /* SceneDelegate.swift in Sources */,
+				DCF0D20923AD82B400314ED4 /* AddCityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
