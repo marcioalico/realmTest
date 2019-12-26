@@ -15,21 +15,27 @@ class ViewController: UIViewController {
     
     @IBOutlet var nameTxt: UITextField!
     @IBOutlet var lastNameTxt: UITextField!
+    @IBOutlet var cityTxt: UITextField!
+    @IBOutlet var vistaUsers: UIView!
     
     //var realm: Realm!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        addUser(name: "nombre0", lastName: "apllido0", userId: "0")
-        addCity(cityName: "Santa Fe", cityId: "0")
+        //addUser(name: "nombre0", lastName: "apllido0", userId: "0")
+        //addCity(cityName: "Santa Fe", cityId: "0")
         //realm = try! Realm()
     }
 
     
-    @IBAction func guardar(){
+   @IBAction func guardar(){
         let nameTxt = self.nameTxt.text!
         let lastNameTxt = self.lastNameTxt.text!
+        
+        self.nameTxt.text! = ""
+        self.lastNameTxt.text! = ""
+        self.cityTxt.text! = ""
         
         addUser(name: nameTxt, lastName: lastNameTxt, userId: "2")
     }
@@ -47,19 +53,25 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    func addCity(cityName: String, cityId: String){
-        //realm = try! Realm()
-
-        let city = City()
-        city.cityName = cityName
-        city.cityId = cityId
-
-        try! Realm.instance.write {
-            Realm.instance.add(city)
-        }
+    class func getUsers() -> [User]? {
+        let users = Realm.instance.objects(User.self).toArray(ofType: User.self) as [User]
+        return users.count > 0 ? users : nil
     }
         
+}
+
+
+extension Results {
+    func toArray<T>(ofType: T.Type) -> [T] {
+        var array = [T]()
+        for i in 0 ..< count {
+            if let result = self[i] as? T {
+                array.append(result)
+            }
+        }
+
+        return array
+    }
 }
         
 //        DispatchQueue(label: "background").async {
@@ -82,7 +94,8 @@ extension Realm {
         get {
             let realm: Realm
             do {
-                let config = SyncUser.current?.configuration(realmURL: Constants.REALM_URL)
+                let config = Realm.Configuration(fileURL: Constants.REALM_URL)
+                    //SyncUser.current?.configuration(realmURL: Constants.REALM_URL)
                 realm = try! Realm()
                 //realm = try! Realm(configuration: config!)
                 return realm

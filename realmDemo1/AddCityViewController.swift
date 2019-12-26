@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddCityViewController: UIViewController {
 
@@ -17,6 +18,27 @@ class AddCityViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func guardar(){
+        let nameTxt = self.nameTxt.text!
+        
+        self.nameTxt.text! = ""
+        
+        addCity(cityName: nameTxt, cityId: "")
+    }
+    
+    func addCity(cityName: String, cityId: String?){
+        //realm = try! Realm()
+
+        let city = City()
+        city.cityName = cityName
+        city.cityId = cityId
+
+        try! Realm.instance.write {
+            Realm.instance.add(city)
+        }
+    }
+    
     
 
     /*
