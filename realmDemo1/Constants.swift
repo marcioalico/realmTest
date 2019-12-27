@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct Constants {
     static let MY_INSTANCE_ADDRESS = "marcioalico.us1.cloud.realm.io"
@@ -14,5 +15,8 @@ struct Constants {
     static let AUTH_URL  = URL(string: "https://\(MY_INSTANCE_ADDRESS)")!
     static let REALM_URL = URL(string: "realms://\(MY_INSTANCE_ADDRESS)/testRealm")!
 }
+    
+
+
 
 

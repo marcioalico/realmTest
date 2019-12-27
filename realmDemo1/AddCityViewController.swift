@@ -21,11 +21,10 @@ class AddCityViewController: UIViewController {
     
     @IBAction func guardar(){
         let nameTxt = self.nameTxt.text!
-        
-        self.nameTxt.text! = ""
-        
         addCity(cityName: nameTxt, cityId: "")
+        self.nameTxt.text! = ""
     }
+    
     
     func addCity(cityName: String, cityId: String?){
         //realm = try! Realm()

@@ -26,10 +26,33 @@ class ViewController: UIViewController {
         //addUser(name: "nombre0", lastName: "apllido0", userId: "0")
         //addCity(cityName: "Santa Fe", cityId: "0")
         //realm = try! Realm()
+        let creds    = SyncCredentials.usernamePassword(username: "marcio2", password: "marcio2", register: false)
+
+            SyncUser.logIn(with: creds, server: Constants.AUTH_URL, onCompletion: { [weak self](user, err) in
+            
+            if let _ = user {
+                // User is logged in
+                print("LOGEAAADOO")
+                print("LOGEAAADOO")
+                print("LOGEAAADOO")
+                print("LOGEAAADOO")
+            } else if let error = err {
+                fatalError(error.localizedDescription)
+            }
+        })
+        
     }
 
     
    @IBAction func guardar(){
+    
+    let ultId = Realm.instance.objects(User.self).filter("userId = userId.@max")
+    let ultimoId = ultId[0].userId
+    let ultimoIdInt:Int? = Int(ultimoId!)
+    let nuevoId = ultimoIdInt! + 1
+    print(nuevoId)
+    let nuevoIdString = String(nuevoId)
+    
         let nameTxt = self.nameTxt.text!
         let lastNameTxt = self.lastNameTxt.text!
         
@@ -37,7 +60,7 @@ class ViewController: UIViewController {
         self.lastNameTxt.text! = ""
         self.cityTxt.text! = ""
         
-        addUser(name: nameTxt, lastName: lastNameTxt, userId: "2")
+        addUser(name: nameTxt, lastName: lastNameTxt, userId: nuevoIdString)
     }
     
     func addUser(name: String, lastName: String, userId: String){
@@ -96,7 +119,7 @@ extension Realm {
             do {
                 let config = Realm.Configuration(fileURL: Constants.REALM_URL)
                     //SyncUser.current?.configuration(realmURL: Constants.REALM_URL)
-                realm = try! Realm()
+                realm = try! Realm(configuration: config)
                 //realm = try! Realm(configuration: config!)
                 return realm
             }
